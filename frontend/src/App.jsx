@@ -1,8 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./index.css";
+import Login from "./Pages/Login";
+
 const App = () => {
   return (
     <>
-      <h1>This is Social Media Application Instagram by Nikhil</h1>
+     <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login/>}/>
+      </Routes>
+     </BrowserRouter>
+
+    
     </>
-  )
+  );
+  
 }
 export default App
