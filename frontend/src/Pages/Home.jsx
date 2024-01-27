@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import LogoutButton from "../components/LogoutButton";
 import {useAuth} from "../store/auth"
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const {token} = useAuth();
     const [msg,setMsg] = useState("");
     const [islogin,setIsLogin] = useState(false);
+    const navigate = useNavigate();
 
     const getHomeData = async() =>{
         try {
@@ -39,6 +41,7 @@ const Home = () => {
         <>
           {islogin && <LogoutButton/>}
           <h1>{msg}</h1>
+          {msg=="You are not logged in."?navigate("/"):""}
         </>
     )
 }
