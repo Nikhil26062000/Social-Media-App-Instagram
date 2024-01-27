@@ -11,11 +11,11 @@ const userSchema = new mongoose.Schema({
     required: true,
     validate(value) {
       if (!validate.isEmail(value)) {
-        throw new Error("Invalid Email Address");
+        throw new Error("Invalid email address");
       }
     },
   },
-  fullname: {
+  fullName: {
     type: String,
     required: true,
     validate(value) {
@@ -76,8 +76,8 @@ userSchema.methods.generateToken = async function () {
     const token = jwt.sign(
       {
         _id: this._id.toString(),
-        name: this.fullname.toString(),
-        username: this.username.toString(),
+        name: this.fullname,
+        username: this.username,
       },
       process.env.JWT_SECRET_KEY
     );
@@ -88,6 +88,7 @@ userSchema.methods.generateToken = async function () {
   } catch (error) {
     console.log("Error while generating token");
     console.log(error);
+    res.status(500).send(error.message);
   }
 };
 
