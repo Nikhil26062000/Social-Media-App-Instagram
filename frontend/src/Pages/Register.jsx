@@ -1,5 +1,6 @@
 // Register.js
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -7,14 +8,44 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignUp = () => {
+  const handleSignUp = (e) => {
+    e.preventDefault();
     // Add your sign-up logic here
     console.log('Sign Up clicked');
     console.log('Email:', email);
     console.log('Full Name:', fullName);
     console.log('Username:', username);
     console.log('Password:', password);
-  };
+    
+    signup();
+  }
+
+  const signup = async() => {
+    try {
+     const response = await fetch('http://localhost:3000/api/auth/signup',{
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json'},
+       body: JSON.stringify({
+         email,
+         username,
+         fullName,
+         password
+       })
+     })
+     const responseData = await response.json();
+     console.log(responseData);
+     if(response.ok){
+       toast.success('Sign Up Successfully');
+     }else{
+      toast.error(responseData);
+     }
+    } catch (error) {
+       console.log(error);
+       toast.error(error.message);
+    }
+ }
+
+   
 
   return (
     <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -57,7 +88,7 @@ const Register = () => {
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                 placeholder="Full Name"
-                value={fullName}
+                value={fullName} //!this variable name should match exactly what we defines in userSchema. if here it is fullName then there it should also be fullName . if here i pass fullname as body as a post method then there in userSchema there should also be fullname .
                 onChange={(e) => setFullName(e.target.value)}
               />
             </div>
