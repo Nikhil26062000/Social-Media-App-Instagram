@@ -79,4 +79,12 @@ const Login = async (req, res) => {
   }
 };
 
-module.exports = { Signup, Login };
+//? -------------------- Controller for home page ---------------------------------------- 
+const home =(req,res) => {
+
+    
+    res.status(200).json({message:"Response from server homepage"})
+}
+
+
+module.exports = { Signup, Login, home };

@@ -38,7 +38,7 @@ const Register = () => {
      })
      const responseData = await response.json();
      console.log(responseData);
-     console.log(responseData.token);
+    //  console.log(responseData.token);
      if(response.ok){
        toast.success('Sign Up Successfully');
        storeToken(responseData.token);
