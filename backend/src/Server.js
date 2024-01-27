@@ -6,6 +6,7 @@ require("./db/connection");
 const cors = require("cors");
 const authRouter = require("./router/auth-router");
 
+
 //? Middleware for cors and adding options for cors
 const corsOptions = {
   origin:"http://localhost:5173",

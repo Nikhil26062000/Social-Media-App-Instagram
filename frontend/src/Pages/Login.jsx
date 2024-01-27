@@ -1,16 +1,35 @@
 // Login.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = async(e) => {
+    e.preventDefault();
     // Add your login logic here
-    console.log('Login clicked');
-    console.log('Username:', username);
-    console.log('Password:', password);
+    
+
+   const response = await fetch('http://localhost:3000/api/auth/login',{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body : JSON.stringify({
+      username,
+      password
+    })
+   })
+
+   const data = await response.json();
+   console.log(data);
+   if(response.ok){
+    toast.success("Login successful");
+   }else{
+    toast.error("Invalid credentials");
+   }
   };
 
   return (

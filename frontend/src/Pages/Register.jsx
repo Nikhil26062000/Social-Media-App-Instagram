@@ -1,6 +1,7 @@
 // Register.js
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -8,6 +9,7 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigate = useNavigate();
   const handleSignUp = (e) => {
     e.preventDefault();
     // Add your sign-up logic here
@@ -34,14 +36,21 @@ const Register = () => {
      })
      const responseData = await response.json();
      console.log(responseData);
+     console.log(responseData.token);
      if(response.ok){
        toast.success('Sign Up Successfully');
+       setEmail("");
+       setFullName("");
+       setUsername("");
+       setPassword("");
+       navigate("/");
+
      }else{
       toast.error(responseData);
      }
     } catch (error) {
        console.log(error);
-       toast.error(error.message);
+       toast.error(error);
     }
  }
 
