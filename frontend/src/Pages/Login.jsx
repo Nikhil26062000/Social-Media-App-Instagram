@@ -2,10 +2,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from '../store/auth';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
+  const {storeToken} = useAuth();
 
   const handleLogin = async(e) => {
     e.preventDefault();
@@ -27,6 +32,10 @@ const Login = () => {
    console.log(data);
    if(response.ok){
     toast.success("Login successful");
+    storeToken(data.token);
+    setUsername("");
+    setPassword("");
+    navigate("/home")
    }else{
     toast.error("Invalid credentials");
    }

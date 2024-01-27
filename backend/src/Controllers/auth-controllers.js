@@ -69,7 +69,9 @@ const Login = async (req, res) => {
     }
     if (isPasswordMatch) {
       const token = await userExist.generateToken();
+    
       res.status(200).json({token: token});
+
     }
   } catch (error) {
     console.log(error);

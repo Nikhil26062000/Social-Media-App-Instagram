@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import { useAuth } from '../store/auth';
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -10,6 +11,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
+  const {storeToken} = useAuth();
   const handleSignUp = (e) => {
     e.preventDefault();
     // Add your sign-up logic here
@@ -39,11 +41,12 @@ const Register = () => {
      console.log(responseData.token);
      if(response.ok){
        toast.success('Sign Up Successfully');
+       storeToken(responseData.token);
        setEmail("");
        setFullName("");
        setUsername("");
        setPassword("");
-       navigate("/");
+       navigate("/home");
 
      }else{
       toast.error(responseData);
