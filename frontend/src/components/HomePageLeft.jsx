@@ -72,7 +72,7 @@ const HomePageLeft = () => {
         </div>
       )}
 
-      <div className="w-[23%] h-[100vh] bg-black pl-4 ">
+      <div className="w-[16%] h-[100vh] bg-black pl-4 ">
         <div className="h-[15vh]">
           <div className="text-white mx-4 pt-7 h-16 font-bold text-xl font-mono">
             Instagram
