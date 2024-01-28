@@ -19,26 +19,22 @@ import ReportGmailerrorredOutlinedIcon from "@mui/icons-material/ReportGmailerro
 
 const HomePageLeft = () => {
   const [show, setShow] = useState(false);
-  const {Logout} = useAuth();
+  const { Logout } = useAuth();
   const navigate = useNavigate();
   const handleShow = () => {
     setShow(!show);
   };
 
-
-
-    const handleLogout = () => {
-     
-        toast.success("Logout successful")
-        Logout();
-        navigate("/");
-
-        
-    }
+  const handleLogout = () => {
+    toast.success("Logout successful");
+    Logout();
+    navigate("/");
+  };
   return (
-    <div className="relative">
+   
+    <div className="w-[16%] bg-black">
       {show && (
-        <div className="w-[25%] bg-[#262626] h-[475px] z-50 my-32 mx-4 rounded-3xl absolute">
+        <div className="w-[18%] bg-[#262626] h-[475px] my-32 mx-4 rounded-3xl absolute">
           <li className="list-none px-4 py-4 text-white cursor-pointer">
             <SettingsOutlinedIcon className="mr-3" />
             Settings
@@ -65,8 +61,10 @@ const HomePageLeft = () => {
           <li className="list-none px-4 py-4 text-white cursor-pointer">
             Switch Account
           </li>
-          <span className="list-none px-4 py-4 text-white cursor-pointer" 
-        onClick={handleLogout}>
+          <span
+            className="list-none px-4 py-4 text-white cursor-pointer"
+            onClick={handleLogout}
+          >
             Log Out
           </span>
         </div>
@@ -88,16 +86,18 @@ const HomePageLeft = () => {
           <NavlinkProfile />
         </div>
         <div className="h-[15vh]  flex justify-start pt-3 ">
-          <div className="flex justify-start gap-2   p-3 cursor-pointer" onClick={handleShow}>
-            <GiHamburgerMenu className=" h-6 w-6 text-white cursor-pointer"  />
+          <div
+            className="flex justify-start gap-2   p-3 cursor-pointer"
+            onClick={handleShow}
+          >
+            <GiHamburgerMenu className=" h-6 w-6 text-white cursor-pointer" />
 
-            <span className="text-white">
-              More
-            </span>
+            <span className="text-white">More</span>
           </div>
         </div>
       </div>
     </div>
+   
   );
 };
 
