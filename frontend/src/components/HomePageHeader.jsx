@@ -50,7 +50,8 @@ const HomePageHeader = () => {
 
   return (
     <>
-    <div className="mx-[120px] mt-5 bg-black">
+    <header className="flex justify-center">
+    <div className="w-[70%] mt-5 bg-orange-300">
     <Slider {...settings}>
     {images &&
         images.map((ele, index) => (
@@ -66,6 +67,7 @@ const HomePageHeader = () => {
     </Slider>
      
         </div>
+        </header>
     </>
   );
 };

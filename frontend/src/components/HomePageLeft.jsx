@@ -32,9 +32,9 @@ const HomePageLeft = () => {
   };
   return (
    
-    <div className="w-[16%] bg-black z-[10] ">
+    <div className="w-[16%] bg-black fixed z-[80] border border-gray-700 border-r-[1px] border-l-0 border-t-0 border-b-0">
       {show && (
-        <div className="w-[18%] bg-[#262626] h-[475px] my-32 mx-4 rounded-3xl absolute z-[70] ">
+        <div className="w-[100%] bg-[#262626] h-[475px] my-32 mx-4 rounded-3xl absolute z-50 ">
           <li className="list-none px-4 py-4 text-white cursor-pointer">
             <SettingsOutlinedIcon className="mr-3" />
             Settings
@@ -70,13 +70,13 @@ const HomePageLeft = () => {
         </div>
       )}
 
-      <div className="leftNavbar w-[16%] h-[100vh] bg-black pl-4 absolute">
+      <div className="leftNavbar w-[16%] h-[100vh] bg-black pl-4">
         <div className="h-[15vh]">
           <div className="text-white mx-4 pt-7 h-16 font-bold text-xl font-mono">
             Instagram
           </div>
         </div>
-        <div className="h-[70vh] flex flex-col justify-start gap-4 cursor-pointer ">
+        <div className="h-[70vh] flex flex-col justify-start gap-4 cursor-pointer absolute  ">
           <NavlinkHome />
           <NavlinkSearch />
           <NavlinkExplore />
@@ -85,7 +85,7 @@ const HomePageLeft = () => {
           <NavlinkNotify />
           <NavlinkProfile />
         </div>
-        <div className="h-[15vh]  flex justify-start pt-3 ">
+        <div className="h-[15vh]  flex justify-start pt-3 absolute top-[85vh]">
           <div
             className="flex justify-start gap-2   p-3 cursor-pointer"
             onClick={handleShow}

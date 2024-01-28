@@ -40,7 +40,10 @@ const Home = () => {
     },[])
     return (
         <>
-          {islogin && <HomePage/>}
+       
+        {islogin && <HomePage/>}
+      
+         
           
           {msg=="You are not logged in."?navigate("/"):""}
         </>

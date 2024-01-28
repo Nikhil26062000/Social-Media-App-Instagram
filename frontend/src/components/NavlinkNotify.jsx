@@ -6,7 +6,7 @@ import heart from "../assets/heart.png"
 const NavlinkNotify = () => {
   return (
     <div>
-     <div className='flex justify-start gap-2  p-3'>
+     <div className='flex justify-start  gap-2  p-3'>
                 <IoIosNotifications className=' h-6 w-6 text-white'/>
                 
                 <NavLink to="/search" className="text-white">Notification</NavLink>
