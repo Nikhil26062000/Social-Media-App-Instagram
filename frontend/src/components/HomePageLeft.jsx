@@ -32,9 +32,9 @@ const HomePageLeft = () => {
   };
   return (
    
-    <div className="w-[16%] bg-black">
+    <div className="w-[16%] bg-black z-[10] ">
       {show && (
-        <div className="w-[18%] bg-[#262626] h-[475px] my-32 mx-4 rounded-3xl absolute">
+        <div className="w-[18%] bg-[#262626] h-[475px] my-32 mx-4 rounded-3xl absolute z-[70] ">
           <li className="list-none px-4 py-4 text-white cursor-pointer">
             <SettingsOutlinedIcon className="mr-3" />
             Settings
@@ -70,13 +70,13 @@ const HomePageLeft = () => {
         </div>
       )}
 
-      <div className="w-[16%] h-[100vh] bg-black pl-4 ">
+      <div className="leftNavbar w-[16%] h-[100vh] bg-black pl-4 absolute">
         <div className="h-[15vh]">
           <div className="text-white mx-4 pt-7 h-16 font-bold text-xl font-mono">
             Instagram
           </div>
         </div>
-        <div className="h-[70vh] flex flex-col justify-start gap-4 cursor-pointer">
+        <div className="h-[70vh] flex flex-col justify-start gap-4 cursor-pointer ">
           <NavlinkHome />
           <NavlinkSearch />
           <NavlinkExplore />
