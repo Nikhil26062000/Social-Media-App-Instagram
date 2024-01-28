@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import LogoutButton from "../components/LogoutButton";
 import {useAuth} from "../store/auth"
 import { useNavigate } from "react-router-dom";
+import HomePage from "./HomePage";
 
 const Home = () => {
     const {token} = useAuth();
@@ -39,8 +40,8 @@ const Home = () => {
     },[])
     return (
         <>
-          {islogin && <LogoutButton/>}
-          <h1>{msg}</h1>
+          {islogin && <HomePage/>}
+          
           {msg=="You are not logged in."?navigate("/"):""}
         </>
     )
