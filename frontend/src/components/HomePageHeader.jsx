@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 const HomePageHeader = () => {
   const [images, setImages] = useState();
 
@@ -14,7 +15,7 @@ const HomePageHeader = () => {
    
   var settings = {
     infinite: true,
-    autoplay: false,
+    autoplay: false, 
     speed: 500,
     arrows: false,
     slidesToShow: 10,
@@ -50,12 +51,13 @@ const HomePageHeader = () => {
 
   return (
     <>
-    <header className="flex justify-center">
-    <div className="w-[70%] mt-5 bg-orange-300">
+    <header className="ml-16">
+    <div className="w-[70%] mt-5 ">
     <Slider {...settings}>
     {images &&
         images.map((ele, index) => (
-          <div className="w-10 h-20 rounded-full overflow-hidden p-2 " key={index}>
+        
+         <div className="w-10 h-20 rounded-full overflow-hidden  outline-none p-2 border-amber-400 " key={index}>
             
             <img
               className="w-[100%] h-[100%] object-cover"
@@ -63,6 +65,7 @@ const HomePageHeader = () => {
               alt="Profile"
             />
           </div>
+  
         ))}
     </Slider>
      

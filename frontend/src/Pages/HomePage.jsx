@@ -6,7 +6,7 @@ import HomePageRight from '../components/HomePageRight'
 const HomePage = () => {
   return (
    
-       <div className='bg-black' >
+       <div className='' >
         <HomePageLeft/>
         <HomePageMiddle/>
         
