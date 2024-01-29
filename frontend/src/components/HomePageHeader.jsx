@@ -69,12 +69,14 @@ const HomePageHeader = () => {
 
   return (
     <>
-    <div className='max-md:w-[100%] bg-black fixed top-0 py-3 z-[90] md:hidden'>
+    {/* header start for mobile */}
+    <div className='max-md:w-[100%] bg-black fixed top-0 py-3 z-[90]  md:hidden'>
         <h1  className="text-white mx-4 font-bold text-2xl font-mono">Instagram</h1>
        </div>
+       {/* header end for mobile */}
 
 
-    <header className="ml-16 max-xl:flex justify-center max-xl:ml-0 px-5 max-md:mt-8">
+    <header className="ml-16 cursor-pointer max-xl:flex justify-center max-xl:ml-0 px-5 max-md:mt-8">
     <div className="w-[70%] mt-5 max-xl:hidden">
     <Slider {...settings}>
     {images &&

@@ -18,7 +18,8 @@ const HomePage = () => {
        
         <HomePageLeft/>
         <HomePageMiddle/>
-        <div className=' fixed bottom-0 w-[100%] flex justify-between flex-wrap text-2xl py-4 px-3 text-white border border-t-2 border-l-0 border-r-0 border-b-0 border-gray-600 bg-black md:hidden'>
+        {/* footer for mobile start */}
+        <div className=' fixed bottom-0 w-[100%] flex justify-between flex-wrap text-2xl py-4 px-3 text-white border border-t-2 border-l-0 border-r-0 border-b-0 border-gray-600 bg-black cursor-pointer md:hidden'>
         <IoMdHome/>
         <FaRegMessage/>
         <MdOutlineExplore/>
@@ -28,6 +29,7 @@ const HomePage = () => {
         <FaUserCircle/>
         
         </div>
+        {/* footer for mobile end */}
     
     </div>
    

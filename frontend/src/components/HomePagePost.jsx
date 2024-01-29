@@ -75,7 +75,7 @@ const HomePagePost = () => {
         </div>
         {/* footer of the post */}
 
-        <div className="w-[100%]  flex justify-start flex-wrap pt-2">
+        <div className="w-[100%] cursor-pointer flex justify-start flex-wrap pt-2">
           {/* left side flex */}
           <div className="w-[80%] py-2 flex justify-start items-center gap-4 flex-wrap text-2xl">
             <FcLike className="text-white" />
@@ -92,7 +92,7 @@ const HomePagePost = () => {
         <div className="flex flex-col justify-start flex-wrap text-white border-gray-500 border-b-2 pb-5 max-md:pb-10">
           <p>11 likes</p>
           <p>{ele.description}.</p>
-          <p className="text-gray-400">view all comments</p>
+          <p className="text-gray-400 cursor-pointer">view all comments</p>
           <div>
             <input type="text" placeholder="Add a comment" className="bg-black text-gray-400 outline-none "/>
           </div>
