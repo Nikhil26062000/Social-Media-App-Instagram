@@ -35,15 +35,15 @@ const HomePagePost = () => {
     }
   };
   return (
-    <div className="ml-56 ">
+    <div className="xl:ml-16 max-xl:ml-0 ">
 
 {post &&
         post.map((ele, index) => (
-          <div className="w-[466px]  bg-black my-20 " key={index}>
+          <div className="w-[466px]  bg-black my-20 max-md:mb-10  max-md:w-[320px] max-md:my-0" key={index}>
         {/* header of the post */}
-        <div className="w-[100%]  flex justify-start">
+        <div className="w-[100%]  flex justify-start flex-wrap">
           {/* left side flex */}
-          <div className="w-[80%]  flex justify-start gap-1">
+          <div className="w-[80%]  flex justify-start flex-wrap gap-1">
             {/* first div */}
             <div className="w-14 h-14 rounded-full overflow-hidden outline-none ">
               <img
@@ -61,12 +61,12 @@ const HomePagePost = () => {
             <h4 className="mt-2 text-white">1d</h4>
           </div>
           {/* rightside */}
-          <div className="w-[20%] h-[65px]  flex justify-end items-center">
+          <div className="w-[20%] h-[65px]  flex justify-end items-center flex-wrap">
             <BsThreeDots />
           </div>
         </div>
         {/* body of the post */}
-        <div className="w-[466px] ">
+        <div className="w-[466px] max-md:w-[320px] mt-2 ">
           <img
             src={ele.url}
             alt="post"
@@ -75,26 +75,26 @@ const HomePagePost = () => {
         </div>
         {/* footer of the post */}
 
-        <div className="w-[100%]  flex justify-start pt-2">
+        <div className="w-[100%]  flex justify-start flex-wrap pt-2">
           {/* left side flex */}
-          <div className="w-[80%] py-2 flex justify-start items-center gap-4 text-2xl">
+          <div className="w-[80%] py-2 flex justify-start items-center gap-4 flex-wrap text-2xl">
             <FcLike className="text-white" />
 
             <FaComment className="text-white" />
             <TbLocationShare className="text-white" />
           </div>
           {/* rightside */}
-          <div className="w-[20%] flex justify-end items-center">
+          <div className="w-[20%] flex justify-end items-center flex-wrap">
             <BsFillSave2Fill className="text-white" />
           </div>
         </div>
         {/* footer description */}
-        <div className="flex flex-col justify-start text-white border-gray-500 border-b-2 pb-5">
+        <div className="flex flex-col justify-start flex-wrap text-white border-gray-500 border-b-2 pb-5 max-md:pb-10">
           <p>11 likes</p>
           <p>{ele.description}.</p>
-          <p>view all comments</p>
+          <p className="text-gray-400">view all comments</p>
           <div>
-            <input type="text" placeholder="Add a comment" className="bg-black text-white outline-none "/>
+            <input type="text" placeholder="Add a comment" className="bg-black text-gray-400 outline-none "/>
           </div>
         </div>
       </div>

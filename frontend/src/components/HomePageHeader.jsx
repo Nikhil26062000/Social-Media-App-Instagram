@@ -22,6 +22,24 @@ const HomePageHeader = () => {
     slidesToScroll: 5
   };
 
+  var settings2 = {
+    infinite: true,
+    autoplay: false, 
+    speed: 500,
+    arrows: false,
+    slidesToShow: 8,
+    slidesToScroll: 5
+  };
+
+  var settings3 = {
+    infinite: true,
+    autoplay: false, 
+    speed: 500,
+    arrows: false,
+    slidesToShow: 5,
+    slidesToScroll: 5
+  };
+
   useEffect(() => {
     getData();
     console.log(images);
@@ -51,13 +69,63 @@ const HomePageHeader = () => {
 
   return (
     <>
-    <header className="ml-16">
-    <div className="w-[70%] mt-5 ">
+    <div className='max-md:w-[100%] bg-black fixed top-0 py-3 z-[90] md:hidden'>
+        <h1  className="text-white mx-4 font-bold text-2xl font-mono">Instagram</h1>
+       </div>
+
+
+    <header className="ml-16 max-xl:flex justify-center max-xl:ml-0 px-5 max-md:mt-8">
+    <div className="w-[70%] mt-5 max-xl:hidden">
     <Slider {...settings}>
     {images &&
         images.map((ele, index) => (
         
-         <div className="w-10 h-20 rounded-full overflow-hidden  outline-none p-2 border-amber-400 " key={index}>
+         <div className="w-10 h-20 rounded-full overflow-hidden  outline-none p-2 " key={index}>
+            
+            <img
+              className="w-[100%] h-[100%] object-cover"
+              src={ele.url} // Replace with the URL of your image
+              alt="Profile"
+            />
+          </div>
+  
+        ))}
+    </Slider>
+     
+        </div>
+
+{/* 
+for tabs */}
+
+
+        <div className="w-[70%] mt-5 max-xl:w-[100%] xl:hidden  max-md:hidden">
+    <Slider {...settings2}>
+    {images &&
+        images.map((ele, index) => (
+        
+         <div className="w-10 h-20 rounded-full overflow-hidden  outline-none p-2 " key={index}>
+            
+            <img
+              className="w-[100%] h-[100%] object-cover"
+              src={ele.url} // Replace with the URL of your image
+              alt="Profile"
+            />
+          </div>
+  
+        ))}
+    </Slider>
+     
+        </div>
+{/* 
+for mobile devices */}
+
+
+        <div className="mt-6 max-md:w-[100%] md:hidden  ">
+    <Slider {...settings3}>
+    {images &&
+        images.map((ele, index) => (
+        
+         <div className="w-10 h-20 rounded-full overflow-hidden  outline-none p-2 " key={index}>
             
             <img
               className="w-[100%] h-[100%] object-cover"
