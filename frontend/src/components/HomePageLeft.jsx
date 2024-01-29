@@ -32,7 +32,7 @@ const HomePageLeft = () => {
   };
   return (
    
-    <div className="w-[16%] bg-black fixed z-[80] border border-gray-700 border-r-[1px] border-l-0 border-t-0 border-b-0">
+    <div className="w-[16%] bg-black fixed z-[80] border border-gray-700 border-r-[1px] border-l-0 border-t-0 border-b-0 max-md:hidden max-md:absolute max-md:bg-black max-md:w-0">
       {show && (
         <div className="w-[100%] bg-[#262626] h-[475px] my-32 mx-4 rounded-3xl absolute z-50 ">
           <li className="list-none px-4 py-4 text-white cursor-pointer">
