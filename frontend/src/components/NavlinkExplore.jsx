@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const NavlinkExplore = () => {
   return (
     <div>
-        <div className='flex justify-start gap-2  p-3'>
+        <div className='flex justify-start gap-2   p-3'>
                 <MdOutlineExplore className='w-6 text-white h-6'/>
                 <NavLink to="/explore" className="text-white">Explore</NavLink>
             </div>

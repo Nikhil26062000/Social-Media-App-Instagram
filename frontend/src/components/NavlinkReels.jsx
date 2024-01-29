@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const NavlinkReels = () => {
   return (
     <div>
-          <div className='flex justify-start gap-2  p-3'>
+          <div className='flex justify-start abs gap-2  p-3'>
                 <BsCameraReelsFill className=' h-6 w-6 text-white'/>
                 
                 <NavLink to="/reels" className="text-white">Reels</NavLink>

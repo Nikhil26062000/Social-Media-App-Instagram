@@ -6,10 +6,10 @@ import HomePageRight from '../components/HomePageRight'
 const HomePage = () => {
   return (
    
-       <div className='flex justify-start ' >
+       <div className='' >
         <HomePageLeft/>
         <HomePageMiddle/>
-        <HomePageRight/>
+        
     
     </div>
    
