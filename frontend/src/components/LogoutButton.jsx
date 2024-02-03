@@ -18,7 +18,7 @@ const LogoutButton = ({text}) => {
     <>
       <button
        
-        className="bg-[#363636] text-white text-md font-medium py-1 px-4 rounded"
+        className="bg-[#363636] text-white text-md font-medium py-1 px-2 rounded"
       >
         {text}
       </button>

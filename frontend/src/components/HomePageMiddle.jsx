@@ -2,6 +2,7 @@ import React from "react";
 import HomePageHeader from "./HomePageHeader";
 import HomePagePost from "./HomePagePost";
 import HomePageRight from "./HomePageRight";
+import Footer from "./Footer";
 
 const HomePageMiddle = () => {
   return (
@@ -18,18 +19,7 @@ const HomePageMiddle = () => {
         <HomePageRight text="follow" url="https://api.slingacademy.com/public/sample-photos/31.jpeg"/>
         <HomePageRight text="follow" url="https://api.slingacademy.com/public/sample-photos/32.jpeg"/>
         <HomePageRight text="follow" url="https://api.slingacademy.com/public/sample-photos/33.jpeg"/>
-        <div className="flex justify-start gap-2 flex-wrap text-gray-300 text-xs ">
-        <p>About</p>
-        <p>Help</p>
-        <p>Press</p>
-        <p>Api</p>
-        <p>Jobs</p>
-        <p>Privacy</p>
-        <p>Terms</p>
-        <p>Location</p>
-        <p>Language</p>
-        <p>Nikhil Verified</p>
-      </div>
+       <Footer/>
       </div>
      
         {/* right side of page ends */}
