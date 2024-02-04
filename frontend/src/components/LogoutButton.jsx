@@ -2,25 +2,25 @@ import { toast } from "react-toastify";
 import { useAuth } from "../store/auth";
 import { useNavigate } from "react-router-dom";
 
-const LogoutButton = () => {
+const LogoutButton = ({text}) => {
 
-    const {Logout} = useAuth();
-    const navigate = useNavigate();
+    // const {Logout} = useAuth();
+    // const navigate = useNavigate();
 
-    const handleLogout = () => {
-        toast.success("Logout successful")
-        Logout();
-        navigate("/");
+    // const handleLogout = () => {
+    //     toast.success("Logout successful")
+    //     Logout();
+    //     navigate("/");
 
         
-    }
+    // }
   return (
     <>
       <button
-        onClick={handleLogout}
-        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+       
+        className="bg-[#363636] text-white text-md font-medium py-1 px-2 rounded"
       >
-        Signout
+        {text}
       </button>
     </>
   );
